@@ -56,7 +56,7 @@ class AndroidSDK:
             return False
 
         # List all packages to check HAXM is supported
-        s2 = self._run_cmd_sdkmanager("--list")
+        s2 = self._run_cmd_sdkmanager("--list", wait=False)
         s2_out, s2_err = s2.communicate()
 
         if s2.returncode != 0:
